@@ -7,10 +7,10 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
     <Head>
-        <title>Honoredge Legal Practice | Trusted Legal Advisors</title>
+        <title>Kumquat partners | Trusted Legal Advisors</title>
         <meta
           name="description"
-          content="Honoredge Legal Practice offers top-tier legal services across multiple practice areas including Corporate Law, Real Estate, and Litigation. Tailored legal solutions for your business and personal needs."
+          content="Kumquat partners offers top-tier legal services across multiple practice areas including Corporate Law, Real Estate, and Litigation. Tailored legal solutions for your business and personal needs."
         />
 
         {/* Open Graph Meta Tags for Social Media */}
