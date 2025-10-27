@@ -91,7 +91,7 @@ export default function Home() {
           <section className="relative h-screen w-full">
             <Image
               src="/hero.png"
-              alt="Honoredge Legal Practice Hero Image"
+              alt="Kumquat Partners Hero Image"
               fill
               priority
               className="object-cover object-center z-0"
@@ -101,8 +101,9 @@ export default function Home() {
                 Kumquat partners
               </h1>
               <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-                Trusted advisors and strategic partners to businesses navigating
-                legal risk in a fast-paced commercial environment.
+                Excellent services, satisfied clients!
+                {/* Trusted advisors and strategic partners to businesses navigating
+                legal risk in a fast-paced commercial environment. */}
               </p>
               <a
                 href="#contact"
@@ -232,7 +233,7 @@ export default function Home() {
                   {
                     name: "Bukki Aderogba",
                     quote:
-                      "Working with Honoredge was seamless. Their dedication and attention to detail were unmatched."
+                      "Working with Kumquat was seamless. Their dedication and attention to detail were unmatched."
                   },
                   {
                     name: "Chinedu Godswill",

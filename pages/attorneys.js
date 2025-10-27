@@ -8,15 +8,9 @@ const attorneys = [
   {
     name: "Olawale Adeliyi, Esq",
     title: "Partner",
-    // bio: 'Sophia has over 20 years of experience in corporate law, specializing in mergers and acquisitions.',
-    image: "/owner.jpg"
+    image: "/owner.jpg",
+    bio: "Olawale was called to the Nigerian Bar in 2009 and went on to build a distinguished legal career, spending over eleven (11) years at one of Nigeria’s leading law firms. During his time there, he was an integral part of the firm’s Litigation, Arbitration, and Alternative Dispute Resolution Practice Group. His experience was enriched by extensive collaboration with highly regarded lawyers across various departments, giving him a well-rounded and robust understanding of diverse areas of law.\n\n Olawale holds several prestigious memberships and certifications. He is a Notary Public for Nigeria, an Associate Member of the Institute of Chartered Mediators and Conciliators (ICMC), an Associate Member of the Chartered Risk Management Institute of Nigeria (CRMI), and a member of the Business Recovery and Insolvency Practitioners Association of Nigeria (BRIPAN). He is also a Member of the Nigerian Institute of Chartered Arbitrators (MCArb)"
   }
-  // {
-  //   name: "Ebuzhafe Annora Ogunsanya",
-  //   title: "Managing Partner",
-  //   // bio: 'James represents clients in complex civil litigation and arbitration across multiple jurisdictions.',
-  //   image: "/lawyer.png"
-  // }
 ];
 
 const cardVariants = {
@@ -43,7 +37,7 @@ const Attorneys = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-garamond font-bold text-gray-900 mb-4">
-              Meet Our Attorneys
+              Meet Our Attorney
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               A team of highly skilled, motivated, and forward-thinking legal
@@ -52,38 +46,45 @@ const Attorneys = () => {
           </div>
 
           {/* Attorney Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10 px-6 lg:px-60">
-            {attorneys.map((attorney, i) => (
-              <motion.div
-                key={attorney.name}
-                className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300"
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={cardVariants}
-              >
-                <div className="h-96 relative">
+          {attorneys.map((attorney, i) => (
+            <motion.div
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={cardVariants}
+              key={attorney.name}
+              className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center lg:items-start"
+            >
+              {/* Profile Picture */}
+              <div className="w-full lg:w-1/3 flex-shrink-0">
+                <div className="relative w-full aspect-square max-w-sm mx-auto overflow-hidden rounded-2xl">
                   <Image
                     src={attorney.image}
                     alt={attorney.name}
                     fill
-                    // loading="lazy"
-                    className="object-fit object-top w-full h-fit"
+                    className="object-cover"
                   />
                 </div>
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-semibold font-garamond text-gray-900">
+              </div>
+              <div className="flex-1">
+                <h2 className="text-3xl md:text-4xl font-bold font-garamond text-gray-900 mb-6">
+                  Our Story
+                </h2>
+                {attorney.bio.split("\n\n").map((paragraph, index) => (
+                  <div
+                    key={index}
+                    className="space-y-4 text-gray-700 text-lg leading-relaxed mb-8 text-justify"
+                  >
+                    {/* <h3 className="text-xl font-semibold font-garamond text-gray-900">
                     {attorney.name}
-                  </h3>
-                  <p className="text-sm text-primary-200 mt-1 italic">
-                    {attorney.title}
-                  </p>
-                  {/* <p className="text-gray-600 mt-4 text-sm">{attorney.bio}</p> */}
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                  </h3> */}
+                    <p>{paragraph}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </Layout>
