@@ -23,17 +23,15 @@ export default function Footer() {
         <div className="flex flex-col space-y-2">
           <h4 className="text-2xl font-garamond mb-4">Contact Details</h4>
           <address className="not-italic text-lg">
-            23 Omoba Olukolu Street,
-            <br />
-            Igbo-Efon, Eti-Osa LGA,
+            7, Brook Street,
             <br />
             Lagos, Nigeria.
           </address>
           <p className="mt-4 text-lg">
             Phone:{" "}
-            <a href="tel:+2348055438457" className="hover:underline">
+            {/* <a href="tel:+2348055438457" className="hover:underline">
               +234 805 543 8457
-            </a>
+            </a> */}
           </p>
           <p className="text-lg">
             Email:{" "}

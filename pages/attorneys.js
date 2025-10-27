@@ -1,23 +1,22 @@
-import React from 'react'
-import Head from 'next/head'
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import Layout from '../components/Layout'
-
+import React from "react";
+import Head from "next/head";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import Layout from "../components/Layout";
 
 const attorneys = [
-	{
-		name: "Saheed Sanni Esq",
-		title: "Founding Partner",
-		// bio: 'Sophia has over 20 years of experience in corporate law, specializing in mergers and acquisitions.',
-		image: "/owner.png",
-	},
-	{
-		name: "Ebuzhafe Annora Ogunsanya",
-		title: "Managing Partner",
-		// bio: 'James represents clients in complex civil litigation and arbitration across multiple jurisdictions.',
-		image: "/lawyer.png",
-	},
+  {
+    name: "Olawale Adeliyi, Esq,",
+    title: "Partner",
+    // bio: 'Sophia has over 20 years of experience in corporate law, specializing in mergers and acquisitions.',
+    image: "/owner.jpg"
+  }
+  // {
+  //   name: "Ebuzhafe Annora Ogunsanya",
+  //   title: "Managing Partner",
+  //   // bio: 'James represents clients in complex civil litigation and arbitration across multiple jurisdictions.',
+  //   image: "/lawyer.png"
+  // }
 ];
 
 const cardVariants = {
@@ -28,17 +27,17 @@ const cardVariants = {
     transition: {
       delay: i * 0.2,
       duration: 0.6,
-      ease: 'easeOut',
-    },
-  }),
-}
+      ease: "easeOut"
+    }
+  })
+};
 
 const Attorneys = () => {
   return (
-    <Layout >
+    <Layout>
       <div className="bg-gray-100 min-h-screen py-20 px-4">
         <Head>
-          <title>Honoredge Legal Practice | Attorneys</title>
+          <title>Kumquat Partners | Attorneys</title>
         </Head>
         <div className="max-w-7xl mx-auto">
           {/* Header */}
@@ -47,7 +46,8 @@ const Attorneys = () => {
               Meet Our Attorneys
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              A team of passionate legal professionals committed to excellence and justice.
+              A team of highly skilled, motivated, and forward-thinking legal
+              professionals
             </p>
           </div>
 
@@ -68,12 +68,17 @@ const Attorneys = () => {
                     src={attorney.image}
                     alt={attorney.name}
                     fill
-                    className="object-fit object-top w-full h-fit"
+                    loading="lazy"
+                    className="object-fit object-top"
                   />
                 </div>
                 <div className="p-6 text-center">
-                  <h3 className="text-xl font-semibold font-garamond text-gray-900">{attorney.name}</h3>
-                  <p className="text-sm text-primary-200 mt-1 italic">{attorney.title}</p>
+                  <h3 className="text-xl font-semibold font-garamond text-gray-900">
+                    {attorney.name}
+                  </h3>
+                  <p className="text-sm text-primary-200 mt-1 italic">
+                    {attorney.title}
+                  </p>
                   {/* <p className="text-gray-600 mt-4 text-sm">{attorney.bio}</p> */}
                 </div>
               </motion.div>
@@ -82,7 +87,7 @@ const Attorneys = () => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Attorneys
+export default Attorneys;
