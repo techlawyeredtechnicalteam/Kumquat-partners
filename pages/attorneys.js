@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 
 const attorneys = [
   {
-    name: "Olawale Adeliyi, Esq,",
+    name: "Olawale Adeliyi, Esq",
     title: "Partner",
     // bio: 'Sophia has over 20 years of experience in corporate law, specializing in mergers and acquisitions.',
     image: "/owner.jpg"
@@ -68,8 +68,8 @@ const Attorneys = () => {
                     src={attorney.image}
                     alt={attorney.name}
                     fill
-                    loading="lazy"
-                    className="object-fit object-top"
+                    // loading="lazy"
+                    className="object-fit object-top w-full h-fit"
                   />
                 </div>
                 <div className="p-6 text-center">
