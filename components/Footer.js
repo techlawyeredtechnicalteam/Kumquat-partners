@@ -36,7 +36,7 @@ export default function Footer() {
           <p className="text-lg">
             Email:{" "}
             <a href="mailto:info@kumquatp.com" className="hover:underline">
-              info@kumquatp.com oadeliyi@kumquatp.com
+              info@kumquatp.com, oadeliyi@kumquatp.com
             </a>
           </p>
         </div>
