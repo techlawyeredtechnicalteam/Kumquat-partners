@@ -14,7 +14,7 @@ export default function Header() {
           <img
             src="/logo.png"
             alt="Honoredge Legal Practice Logo"
-            className="h-20 object-cover"
+            className="h-20 w-auto"
           />
         </Link>
 
@@ -44,7 +44,7 @@ export default function Header() {
         {/* Mobile Menu Toggle Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden text-[#230562] focus:outline-none"
+          className="md:hidden text-white focus:outline-none"
         >
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
