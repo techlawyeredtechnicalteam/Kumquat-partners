@@ -10,7 +10,7 @@ export default function Header() {
     <header className="bg-[#645646] sticky top-0 z-20 text-white py-6 px-8 shadow-lg">
       <div className="max-w-7xl mx-auto flex justify-between items-center h-16">
         {/* Logo and Name */}
-        <Link href="/" className="flex items-center justify-center">
+        <Link href="/" className="flex items-center">
           <img
             src="/logo.png"
             alt="Honoredge Legal Practice Logo"
