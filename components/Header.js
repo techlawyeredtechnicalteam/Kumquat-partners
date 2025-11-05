@@ -8,7 +8,7 @@ export default function Header() {
 
   return (
     <header className="bg-[#645646] sticky top-0 z-20 text-white py-6 px-8 shadow-lg">
-      <div className="max-w-7xl mx-auto flex justify-between items-center h-16">
+      <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo and Name */}
         <Link href="/" className="flex items-center">
           <img
@@ -19,7 +19,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-8 items-center justify-center">
+        <nav className="hidden md:flex space-x-8">
           {/* <Link href="/" className="font-semibold relative group">
             Home
           </Link> */}
