@@ -68,14 +68,14 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4">
                 <Phone className="text-primary-300 mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-800 text-lg">Phone</h3>
-                  <p className="text-gray-600 text-sm">+234 805 543 8457</p>
-                  <p className="text-gray-600 text-sm">+234 706 241 0156</p>
+                  <p className="text-gray-600 text-sm">+234 073 384 5783</p>
+                  <p className="text-gray-600 text-sm">+234 071 209 5049</p>
                 </div>
-              </div> */}
+              </div>
 
               <div className="flex items-start gap-4">
                 <Mail className="text-primary-300 mt-1" />
@@ -96,7 +96,7 @@ const Contact = () => {
               className="w-full h-96 rounded-xl overflow-hidden shadow-md"
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.743867408935!2d3.4218768142624565!3d6.429088025580813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf50f7eb63445%3A0x8f5bb671755cf505!2sVictoria%20Island%2C%20Lagos!5e0!3m2!1sen!2sng!4v1689808044673!5m2!1sen!2sng"
+                src="https://www.google.com/maps/dir//7+Brook+St,+Lagos+Island,+Lagos+102273,+Lagos/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x103b8b19dbd7717d:0xc216aef96442c3e3?sa=X&ved=1t:707&ictx=111"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

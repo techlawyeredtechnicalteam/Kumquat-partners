@@ -98,10 +98,10 @@ export default function Home() {
             />
             <div className="absolute inset-0 bg-black bg-opacity-60 z-10 flex flex-col items-center justify-center text-center text-white px-4">
               <h1 className="text-5xl md:text-6xl font-garamond font-bold mb-6 leading-tight">
-                Kumquat partners
+                Kumquat Partners
               </h1>
               <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-                Excellent services, satisfied clients!
+                excellent services, satisfied clients!
                 {/* Trusted advisors and strategic partners to businesses navigating
                 legal risk in a fast-paced commercial environment. */}
               </p>
@@ -117,7 +117,7 @@ export default function Home() {
           {/* About Section */}
           <section id="about" className="py-24 bg-gray-50 px-6">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="flex justify-center">
+              <div className="">
                 <Image
                   src="/logo.png"
                   alt="Honoredge Logo"
@@ -126,10 +126,10 @@ export default function Home() {
                 />
               </div>
               <div>
-                <h2 className="text-4xl font-garamond font-bold mb-4">
+                <h2 className="text-4xl font-garamond font-bold mb-4 text-gray-800">
                   About Us
                 </h2>
-                <p className="text-lg text-gray-700 leading-relaxed">
+                <p className="text-lg text-text leading-relaxed">
                   At Kumquat Partners, We combine deep legal insight with
                   business acumen, offering proactive advice, agile
                   representation, and tailored strategies that align with each
@@ -181,8 +181,9 @@ export default function Home() {
                       Our Values
                     </h3>
                     <p className="text-sm text-gray-700 text-center mt-2">
-                      Guided by transparency, Integrity, Client-Centricity
-                      Excellence, Innovation, and Confidentiality.
+                      We are guided by transparency, integrity,
+                      client-centricity, excellence, innovation, and
+                      confidentiality.
                     </p>
                   </div>
                 </div>
@@ -286,7 +287,7 @@ export default function Home() {
               can support your legal journey.
             </p>
             <a
-              href="mailto:honoredgelp@gmail.com"
+              href="mailto:info@kumquatp.com"
               className="bg-white text-black font-semibold py-3 px-8 rounded-full hover:bg-blue-100 transition duration-300"
             >
               Contact Us

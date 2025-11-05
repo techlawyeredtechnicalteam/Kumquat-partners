@@ -1,35 +1,44 @@
-'use client'
-import Link from 'next/link'
-import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
+"use client";
+import Link from "next/link";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-gray-50 sticky top-0 z-20 text-[#230562] py-6 px-8 shadow-lg">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
+    <header className="bg-[#645646] sticky top-0 z-20 text-white py-6 px-8 shadow-lg">
+      <div className="max-w-7xl mx-auto flex justify-between items-center h-16">
         {/* Logo and Name */}
-        <Link href="/" className="flex items-center space-x-3">
-          <img src="/logo.png" alt="Honoredge Legal Practice Logo" className="h-14 w-auto" />
-          {/* <span className="font-bold hidden md:block text-xl tracking-wide">Honoredge Legal Practice</span> */}
+        <Link href="/" className="flex items-center justify-center">
+          <img
+            src="/logo.png"
+            alt="Honoredge Legal Practice Logo"
+            className="h-20 object-cover"
+          />
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-8">
-          <Link href="/" className="font-semibold relative group">
+        <nav className="hidden md:flex space-x-8 items-center justify-center">
+          {/* <Link href="/" className="font-semibold relative group">
             Home
-          </Link>
-          {['About', 'Attorneys', 'Practice Areas', 'Blog', 'Contact'].map((item, idx) => (
-            <Link
-              key={idx}
-              href={item === 'Practice Areas' ? '/#practice-areas' : `/${item.toLowerCase().replace(' ', '')}`}
-              className="relative group font-semibold tracking-wide"
-            >
-              {item}
-              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
-            </Link>
-          ))}
+          </Link> */}
+          {["About", "Attorneys", "Practice Areas", "Blog", "Contact"].map(
+            (item, idx) => (
+              <Link
+                key={idx}
+                href={
+                  item === "Practice Areas"
+                    ? "/#practice-areas"
+                    : `/${item.toLowerCase().replace(" ", "")}`
+                }
+                className="relative group font-semibold tracking-wide"
+              >
+                {item}
+                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
+              </Link>
+            )
+          )}
         </nav>
 
         {/* Mobile Menu Toggle Button */}
@@ -47,18 +56,23 @@ export default function Header() {
           <Link href="/" className="font-semibold block">
             Home
           </Link>
-          {['About', 'Attorneys', 'Practice Areas', 'Blog', 'Contact'].map((item, idx) => (
-            <Link
-              key={idx}
-              href={item === 'Practice Areas' ? '/#practice-areas' : `/${item.toLowerCase().replace(' ', '')}`}
-              className="block font-semibold"
-            >
-              {item}
-            </Link>
-          ))}
+          {["About", "Attorneys", "Practice Areas", "Blog", "Contact"].map(
+            (item, idx) => (
+              <Link
+                key={idx}
+                href={
+                  item === "Practice Areas"
+                    ? "/#practice-areas"
+                    : `/${item.toLowerCase().replace(" ", "")}`
+                }
+                className="block font-semibold"
+              >
+                {item}
+              </Link>
+            )
+          )}
         </div>
       )}
     </header>
-
-  )
+  );
 }
