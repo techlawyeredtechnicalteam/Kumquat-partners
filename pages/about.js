@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Head from "next/head";
-import Image from "next/image"; 
+import Image from "next/image";
 import Link from "next/link";
 import Layout from "../components/Layout";
 
@@ -10,8 +10,8 @@ const slideUp = {
   visible: (i = 1) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.15, duration: 0.6, ease: 'easeOut' },
-  }),
+    transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" }
+  })
 };
 
 const scaleIn = {
@@ -19,8 +19,8 @@ const scaleIn = {
   visible: (i = 1) => ({
     opacity: 1,
     scale: 1,
-    transition: { delay: i * 0.2, duration: 0.6, ease: 'easeOut' },
-  }),
+    transition: { delay: i * 0.2, duration: 0.6, ease: "easeOut" }
+  })
 };
 
 export default function AboutUs() {
@@ -116,7 +116,7 @@ export default function AboutUs() {
     <Layout>
       <div className="bg-gray-50 min-h-screen py-20 px-6">
         <Head>
-          <title>Honoredge Legal Practice | About Us</title>
+          <title>Kumquat Partners | About Us</title>
         </Head>
 
         <div className="max-w-7xl mx-auto space-y-24">
@@ -131,14 +131,59 @@ export default function AboutUs() {
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 font-garamond">
               About Kumquat Partners
             </h1>
-            <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
-              we bring together a team of highly skilled, motivated, and
-              forward-thinking legal professionals
-            </p>
+            <div className="mt-6 text-lg text-gray-600 max-w-7xl mx-auto text-justify">
+              Kumquat Partners is a boutique law firm delivering bespoke legal
+              solutions to individuals, corporations, and government
+              institutions with a sharp focus on business litigation,
+              arbitration, and alternative dispute resolution (ADR). Our firm is
+              built on a foundation of excellence, precision, and strategic
+              thinking—tailored to meet the dynamic needs of modern businesses.
+              <p className="mb-4 pt-4">
+                At Kumquat Partners, we bring together a team of highly skilled,
+                motivated, and forward-thinking legal professionals who are
+                committed to delivering real-time, practical, and impactful
+                solutions. Whether in the courtroom, at the negotiating table,
+                or across the arbitration aisle, our lawyers thrive on the
+                challenge of complex commercial disputes and are relentless in
+                the pursuit of our clients&apos; interests. Founded with a clear
+                vision, Kumquat Partners was established to offer top-tier legal
+                services comparable to those of Nigeria&apos;s most prestigious
+                law firms—but with the accessibility, responsiveness, and
+                cost-efficiency that only a focused, client-driven boutique firm
+                can provide.
+              </p>{" "}
+              <p className="mb-4">
+                We are not just legal technicians—we are trusted advisors and
+                strategic partners to businesses navigating legal risk in a
+                fast-paced commercial environment. Kumquat Partners is also
+                significantly experienced in the field of criminal litigation in
+                Nigeria. Kumquat Partners is a go to firm for criminal law and
+                is adept in handling white-collar crime. In addition to
+                white-collar crime, we compeently handle a variety of cases
+                covering issues such as violent crimes, crimes against property,
+                cyber-crime, medical negligence, etc.
+              </p>
+              <p className="mb-4">
+                Our lawyers have vast experience in advising and/or representing
+                clients in all Courts in Nigeria, from the Supreme Court and
+                State High Courts/Federal High Court to the Magistrates' Courts,
+                as well as before investigative, law enforcement and
+                adjudicating authorities/agencies. Our lawyers are proficient in
+                criminal law and are experts in every area of private defence.
+                Our lawyers' experience in the field of white-collar crime has
+                grown significantly over the past years, especially with respect
+                to money laundering cases.
+              </p>
+              In the other areas of criminal litigation, our lawyers have
+              expertise in advising and representing clients from the beginning
+              of an investigation, straight through to the appellate stage. We
+              have successfully represented clients in a sizable number of
+              criminal matters.
+            </div>
           </motion.section>
 
           {/* Mission, Vision, Values */}
-          <section className="grid md:grid-cols-3 gap-12">
+          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {[
               {
                 title: "Our Mission",
@@ -204,7 +249,7 @@ export default function AboutUs() {
               />
             </div>
 
-            <div className="grid md:grid-cols-2 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {focusAreas.map((area, i) => (
                 <motion.div
                   key={area.title}
@@ -218,7 +263,7 @@ export default function AboutUs() {
                   <h4 className="text-xl font-bold text-primary-300">
                     {area.title}
                   </h4>
-                  <p className="mt-2 text-sm text-gray-700">
+                  <p className="mt-2 text-sm text-gray-700 text-pretty">
                     {area.description}
                   </p>
                 </motion.div>

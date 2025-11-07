@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,10 +12,12 @@ export default function Header() {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo and Name */}
         <Link href="/" className="flex items-center">
-          <img
+          <Image
             src="/logo.png"
             alt="Honoredge Legal Practice Logo"
-            className="h-20 w-auto"
+            width={200}
+            height={200}
+            objectFit="cover"
           />
         </Link>
 
@@ -32,10 +35,10 @@ export default function Header() {
                     ? "/#practice-areas"
                     : `/${item.toLowerCase().replace(" ", "")}`
                 }
-                className="relative group font-semibold tracking-wide"
+                // className="relative group font-semibold tracking-wide"
               >
                 {item}
-                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
+                {/* <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span> */}
               </Link>
             )
           )}

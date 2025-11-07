@@ -7,13 +7,14 @@ import Layout from "../components/Layout";
 import Image from "next/image";
 
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
-};
+// const cardVariants = {
+//   hidden: { opacity: 0, y: 40 },
+//   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+// };
 
 const focusAreas = [
   {
@@ -49,25 +50,68 @@ const focusAreas = [
 ];
 
 // Reusable AnimatedCard component
-function AnimatedCard({ title, description, delay }) {
-  return (
-    <motion.div
-      variants={cardVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ delay }}
-      className="bg-gray-800 rounded-2xl p-6 border border-gray-700 hover:border-primary-200 hover:shadow-lg transition duration-300 ease-in-out"
-    >
-      <h4 className="text-xl font-garamond font-semibold text-white mb-2">
-        {title}
-      </h4>
-      <p className="text-gray-400 text-sm">{description}</p>
-    </motion.div>
-  );
-}
+// function AnimatedCard({ title, description, delay }) {
+//   return (
+//     <motion.div
+//       variants={cardVariants}
+//       initial="hidden"
+//       whileInView="visible"
+//       viewport={{ once: true }}
+//       transition={{ delay }}
+//       className="bg-gray-800 rounded-2xl p-6 border border-gray-700 hover:border-primary-200 hover:shadow-lg transition duration-300 ease-in-out"
+//     >
+//       <h4 className="text-xl font-garamond font-semibold text-white mb-2">
+//         {title}
+//       </h4>
+//       <p className="text-gray-400 text-sm">{description}</p>
+//     </motion.div>
+//   );
+// }
+
+const testimonials = [
+  {
+    name: "Bukki Aderogba",
+    quote:
+      "Working with Kumquat was seamless. Their dedication and attention to detail were unmatched."
+  },
+  {
+    name: "Chinedu Godswill",
+    quote:
+      "They listened, strategized, and delivered outstanding results. We couldn’t have asked for better support."
+  },
+  {
+    name: "Emmanuel Folorunsho",
+    quote:
+      "Professional, responsive, and trustworthy. My case was always handled with utmost care."
+  }
+];
 
 export default function Home() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Auto testimonials every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, [testimonials.length]);
+
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
+  };
+
+  const goToPrevious = () => {
+    setCurrentIndex(
+      (prev = (prev - 1 + testimonials.length) % testimonials.length)
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true }); // animate only once
   const controls = useAnimation();
@@ -228,48 +272,73 @@ export default function Home() {
                 Hear directly from those we've helped achieve success.
               </p>
 
-              {/* Testimonials Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                {[
-                  {
-                    name: "Bukki Aderogba",
-                    quote:
-                      "Working with Kumquat was seamless. Their dedication and attention to detail were unmatched."
-                  },
-                  {
-                    name: "Chinedu Godswill",
-                    quote:
-                      "They listened, strategized, and delivered outstanding results. We couldn’t have asked for better support."
-                  },
-                  {
-                    name: "Emmanuel Folorunsho",
-                    quote:
-                      "Professional, responsive, and trustworthy. My case was always handled with utmost care."
-                  }
-                ].map((testimonial, index) => (
+              {/* Testimonials slider */}
+              <div className="relative">
+                {/* Testimonial Cards Container */}
+                <div className="overflow-hidden">
                   <div
-                    key={index}
-                    className="bg-white p-8 rounded-lg shadow-md flex flex-col justify-between h-full"
+                    className="flex transition-transform duration-700 ease-in-out"
+                    style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                   >
-                    <div className="text-4xl text-primary-200 mb-4">“</div>
-                    <p className="text-gray-800 text-sm leading-relaxed mb-6">
-                      {testimonial.quote}
-                    </p>
+                    {testimonials.map((testimonial, index) => (
+                      <div key={index} className="w-full flex-shrink-0 px-4">
+                        <div className="bg-white p-8 md:p-12 rounded-lg shadow-md mx-auto max-w-3xl">
+                          <div className="text-5xl text-amber-600 mb-4">"</div>
+                          <p className="text-gray-800 text-base md:text-lg leading-relaxed mb-8">
+                            {testimonial.quote}
+                          </p>
 
-                    {/* ⭐ Star Rating */}
-                    <div
-                      className="flex items-center justify-center space-x-1 mb-4"
-                      aria-label="5 star rating"
-                    >
-                      {[...Array(5)].map((_, i) => (
-                        <StarIcon key={i} className="w-5 h-5 text-yellow-400" />
-                      ))}
-                    </div>
+                          {/* Star Rating */}
+                          <div className="flex items-center justify-center space-x-1 mb-6">
+                            {[...Array(5)].map((_, i) => (
+                              <StarIcon
+                                key={i}
+                                className="w-5 h-5 text-yellow-400 fill-yellow-400"
+                              />
+                            ))}
+                          </div>
 
-                    <hr className="border-t border-gray-300 my-4" />
-                    <p className="italic text-gray-700">- {testimonial.name}</p>
+                          <hr className="border-t border-gray-300 my-6" />
+                          <p className="italic text-gray-700 font-medium">
+                            - {testimonial.name}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
+
+                {/* Navigation Arrows */}
+                <button
+                  onClick={goToPrevious}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-3 rounded-full shadow-lg transition-all"
+                  aria-label="Previous testimonial"
+                >
+                  <ChevronLeft className="w-6 h-6 text-gray-800" />
+                </button>
+                <button
+                  onClick={goToNext}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-3 rounded-full shadow-lg transition-all"
+                  aria-label="Next testimonial"
+                >
+                  <ChevronRight className="w-6 h-6 text-gray-800" />
+                </button>
+
+                {/* Dot Indicators */}
+                {/* <div className="flex justify-center gap-2 mt-8">
+                  {testimonials.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => goToSlide(index)}
+                      className={`w-3 h-3 rounded-full transition-all ${
+                        currentIndex === index
+                          ? "bg-amber-600 w-8"
+                          : "bg-gray-400 hover:bg-gray-500"
+                      }`}
+                      aria-label={`Go to testimonial ${index + 1}`}
+                    />
+                  ))}
+                </div> */}
               </div>
             </div>
           </section>
