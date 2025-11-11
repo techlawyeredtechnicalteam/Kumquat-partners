@@ -30,7 +30,7 @@ export default function Footer() {
           <p className="mt-4 text-lg">
             Phone:{" "}
             <a href="tel:+2340733845783" className="hover:underline">
-              +234 073 384 5783, +234 071 209 5049
+              +234 703 384 5783, +234 701 209 5049
             </a>
           </p>
           <p className="text-lg">
