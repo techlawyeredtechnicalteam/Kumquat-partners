@@ -96,13 +96,13 @@ const Contact = () => {
               className="w-full h-96 rounded-xl overflow-hidden shadow-md"
             >
               <iframe
-                src="https://www.google.com/maps/dir//7+Brook+St,+Lagos+Island,+Lagos+102273,+Lagos/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x103b8b19dbd7717d:0xc216aef96442c3e3?sa=X&ved=1t:707&ictx=111"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63426.608307729504!2d3.301484754382802!3d6.501036726716125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b19dbd7717d%3A0xc216aef96442c3e3!2s7%20Brook%20St%2C%20Lagos%20Island%2C%20Lagos%20102273%2C%20Lagos!5e0!3m2!1sen!2sng!4v1762907086944!5m2!1sen!2sng"
                 width="100%"
                 height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
+                style={{ border: "0" }}
+                allowfullscreen=""
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                referrerpolicy="no-referrer-when-downgrade"
               ></iframe>
             </motion.div>
           </div>

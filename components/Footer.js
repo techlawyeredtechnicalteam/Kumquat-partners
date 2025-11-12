@@ -30,13 +30,21 @@ export default function Footer() {
           <p className="mt-4 text-lg">
             Phone:{" "}
             <a href="tel:+2340733845783" className="hover:underline">
-              +234 703 384 5783, +234 701 209 5049
+              +234 703 384 5783
+            </a>
+            <br />
+            <a href="tel:+23407012095049" className="hover:underline">
+              +234 701 209 5049
             </a>
           </p>
           <p className="text-lg">
             Email:{" "}
             <a href="mailto:info@kumquatp.com" className="hover:underline">
-              info@kumquatp.com, oadeliyi@kumquatp.com
+              info@kumquatp.com
+            </a>
+            <br />
+            <a href="mailto:oadeliyi@kumquatp.com" className="hover:underline">
+              oadeliyi@kumquatp.com
             </a>
           </p>
         </div>
@@ -85,7 +93,8 @@ export default function Footer() {
 
           {/* Copyright Notice */}
           <div className="mt-6 md:mt-0 text-lg">
-            &copy; {new Date().getFullYear()} Kumquat Partners. All rights reserved.
+            &copy; {new Date().getFullYear()} Kumquat Partners. All rights
+            reserved.
           </div>
         </div>
       </div>

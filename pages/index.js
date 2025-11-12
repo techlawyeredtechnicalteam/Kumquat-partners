@@ -1,90 +1,14 @@
 "use client";
 
-import Head from "next/head";
-import Link from "next/link";
 import { StarIcon } from "@heroicons/react/24/solid";
 import Layout from "../components/Layout";
 import Image from "next/image";
-
-import { motion, useAnimation } from "framer-motion";
+import { useAnimation } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
-// const cardVariants = {
-//   hidden: { opacity: 0, y: 40 },
-//   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
-// };
-
-const focusAreas = [
-  {
-    title: "Commercial Litigation",
-    description:
-      "We represent businesses in complex commercial disputes, delivering swift, strategic courtroom advocacy to protect commercial interests."
-  },
-  {
-    title: "Arbitration & Alternative Dispute Resolution",
-    description:
-      "Offering efficient, confidential, and cost-effective resolution of disputes through domestic and international arbitration, mediation, and negotiation."
-  },
-  {
-    title: "Criminal Law & Fundamental Rights Enforcement",
-    description:
-      "Defending individuals and entities against criminal allegations while protecting constitutional rights through strategic, rights-based legal action."
-  },
-  {
-    title: "Real Estate & Land Disputes",
-    description:
-      "Advising on land transactions, title disputes, and development issues with a deep understanding of Nigeria’s property laws and regulatory landscape."
-  },
-  {
-    title: "Matrimonial & Child Custody Matters",
-    description:
-      "Providing compassionate, discreet, and results-driven legal support in sensitive family matters including divorce, custody, and support disputes."
-  },
-  {
-    title: "Employment & Labour Disputes",
-    description:
-      "Guiding employers and employees through workplace disputes, wrongful terminations, and regulatory compliance before the National Industrial Court."
-  }
-];
-
-// Reusable AnimatedCard component
-// function AnimatedCard({ title, description, delay }) {
-//   return (
-//     <motion.div
-//       variants={cardVariants}
-//       initial="hidden"
-//       whileInView="visible"
-//       viewport={{ once: true }}
-//       transition={{ delay }}
-//       className="bg-gray-800 rounded-2xl p-6 border border-gray-700 hover:border-primary-200 hover:shadow-lg transition duration-300 ease-in-out"
-//     >
-//       <h4 className="text-xl font-garamond font-semibold text-white mb-2">
-//         {title}
-//       </h4>
-//       <p className="text-gray-400 text-sm">{description}</p>
-//     </motion.div>
-//   );
-// }
-
-const testimonials = [
-  {
-    name: "Bukki Aderogba",
-    quote:
-      "Working with Kumquat was seamless. Their dedication and attention to detail were unmatched."
-  },
-  {
-    name: "Chinedu Godswill",
-    quote:
-      "They listened, strategized, and delivered outstanding results. We couldn’t have asked for better support."
-  },
-  {
-    name: "Emmanuel Folorunsho",
-    quote:
-      "Professional, responsive, and trustworthy. My case was always handled with utmost care."
-  }
-];
+import { focusAreas } from "../src/data/focusArea";
+import { testimonials } from "../src/data/testimonials";
 
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -146,8 +70,6 @@ export default function Home() {
               </h1>
               <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
                 excellent services, satisfied clients!
-                {/* Trusted advisors and strategic partners to businesses navigating
-                legal risk in a fast-paced commercial environment. */}
               </p>
               <a
                 href="#contact"
@@ -164,7 +86,7 @@ export default function Home() {
               <div className="">
                 <Image
                   src="/logo.png"
-                  alt="Honoredge Logo"
+                  alt="Kumquat Partners Logo"
                   width={200}
                   height={200}
                 />
@@ -323,22 +245,6 @@ export default function Home() {
                 >
                   <ChevronRight className="w-6 h-6 text-gray-800" />
                 </button>
-
-                {/* Dot Indicators */}
-                {/* <div className="flex justify-center gap-2 mt-8">
-                  {testimonials.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => goToSlide(index)}
-                      className={`w-3 h-3 rounded-full transition-all ${
-                        currentIndex === index
-                          ? "bg-amber-600 w-8"
-                          : "bg-gray-400 hover:bg-gray-500"
-                      }`}
-                      aria-label={`Go to testimonial ${index + 1}`}
-                    />
-                  ))}
-                </div> */}
               </div>
             </div>
           </section>

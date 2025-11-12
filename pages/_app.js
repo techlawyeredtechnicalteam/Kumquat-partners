@@ -70,8 +70,7 @@ function MyApp({ Component, pageProps }) {
               name: "Kumquat partners",
               url: "https://www.kumquat-partners.vercel.app",
               logo: "https://www.kumquat-partners.com/logo.png",
-              description:
-                "Top-tier legal services in Corporate Law, Real Estate, Immigration, and more.",
+              description: "Excellent services, satisfied clients!",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Lagos",
