@@ -5,9 +5,9 @@ import { PortableText } from '@portabletext/react'
 
 const components = {
   types: {
-    image: ({ value }) => (
+    image: ({ value }) => value?.asset ? (
       <img src={urlFor(value).width(800).url()} alt="Blog Image" className="my-4 rounded-lg" />
-    ),
+    ) : null,
   },
   block: {
     h1: ({ children }) => <h1 className="text-3xl font-bold my-4">{children}</h1>,
@@ -159,19 +159,21 @@ export default function BlogPost({ post }) {
     <Layout>
       <div className="max-w-3xl mx-auto px-4 py-10">
         <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-        <Image
-          src={urlFor(post.mainImage).url()}
-          width={1200}
-          height={600}
-          alt={post.title}
-          className="rounded-lg"
-        />
+        {post.mainImage?.asset && (
+          <Image
+            src={urlFor(post.mainImage).url()}
+            width={1200}
+            height={600}
+            alt={post.title}
+            className="rounded-lg"
+          />
+        )}
         <div className="mt-6">
           <PortableText value={post.body} components={components} />
         </div>
         {/* Author Info */}
         <div className="flex items-center mt-6 mb-10 space-x-4">
-          {post.author?.image && (
+          {post.author?.image?.asset && (
             <Image
               src={urlFor(post.author.image).width(100).height(100).url()}
               width={50}
